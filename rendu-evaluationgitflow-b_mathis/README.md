@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+## Quick start
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+### `npm install`
+Install all the dependencies needed for the project to run.
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+# Comment l'utiliser
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Calculatrice en ligne
 
-### `npm run build`
+Cette application est une calculatrice en ligne simple qui vous permet d'effectuer des opérations mathématiques de base telles que l'addition, la soustraction, la multiplication et la division. Vous pouvez également consulter l'historique de vos calculs précédents.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Fonctionnalités
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Réaliser les opérations standards et bien définiessuivantes: l’addition, la soustraction, la multiplication et la division.
+- Manipuler des nombres entiers et décimaux.
+- Implémentee les fonctionnalités CE (Clear Error) et C (Clear).
+- Conserve un historique des opérations réalisées durant la session.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Comment utiliser
 
-### `npm run eject`
+1. **Interface principale**
+   L'interface principale de l'application est divisée en plusieurs sections, notamment :
+    - En-tête : Affiche le titre de l'application et une barre de navigation avec des liens vers d'autres pages.
+    - Corps : Comprend la calculatrice et l'historique des calculs.
+    - Pied de page : Affiche des informations supplémentaires sur l'application.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Effectuer un calcul**
+    - Saisissez le premier nombre dans la zone de texte "Nombre de gauche".
+    - Sélectionnez l'opérateur souhaité dans la liste déroulante.
+    - Saisissez le deuxième nombre dans la zone de texte "Nombre de droite".
+    - Cliquez sur le bouton "Calculer".
+    - Le résultat du calcul sera affiché dans le cercle central.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Effacer le résultat**
+    - Cliquez sur le bouton "C" pour effacer le résultat affiché dans le cercle central.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Effacer tous les calculs et l'historique**
+    - Cliquez sur le bouton "CA" pour effacer tous les calculs et l'historique.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. **Consulter l'historique des calculs**
+    - Cliquez sur le bouton "Historique" pour afficher l'historique des calculs précédents.
+    - L'historique s'affichera dans un volet latéral gauche.
+    - Chaque calcul précédent sera affiché sous la forme "Opération = Résultat".
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Mathis Brouard (MathisLeDev)

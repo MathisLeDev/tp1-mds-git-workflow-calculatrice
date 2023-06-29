@@ -132,7 +132,7 @@ function App() {
             </div>
 
             <button onClick={()=>{setIsHistoryMenuOpen(!isHistoryMenuOpen)}} className={"absolute top-0 left-0 my-28 mx-2 border rounded-xl px-1 py-3 text-white text-xl"}>Historique</button>
-            <div className={`absolute top-0 left-0 w-[40vh] h-full bg-gray-800 transition-all duration-150 origin-left ${isHistoryMenuOpen ? "-translate-x-full" : "translate-x-0"}`}>
+            <div className={`absolute top-0 left-0 w-[40vh] h-full bg-gray-800 transition-all duration-150 origin-left ${!isHistoryMenuOpen ? "-translate-x-full" : "translate-x-0"}`}>
                 <div className={"flex items-center flex-row justify-between text-white text-xl p-4 border-b border-gray-300"}>
                     <h3 className={""}>Historique des calculs :</h3>
                     <h3 className={"px-6 py-2 border rounded-xl"} onClick={()=>{setIsHistoryMenuOpen(!isHistoryMenuOpen)}}>X</h3>

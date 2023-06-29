@@ -9,7 +9,7 @@ function App() {
     const [lastResult, setLastResult] = useState(0);
     const [result, setResult] = useState(leftOperand + rightOperand);
     const [history, setHistory] = useState([]);
-
+    const [isHistoryMenuOpen, setIsHistoryMenuOpen] = useState(false);
 
     const handleCalculate = () => {
         const operation = `${leftOperand} ${operator} ${rightOperand}`;
@@ -126,15 +126,22 @@ function App() {
                     <button onClick={handleCalculate}
                             className={"rounded-xl px-6 py-3 bg-pink-500 mx-auto hover:bg-yellow-500 transition-all ease-in duration-200 text-white text-2xl hover:scale-110"}>Calculer
                     </button>
-                    <div className={"mt-8"}>
-                        <h3 className={"text-white text-xl mb-2"}>Historique des calculs :</h3>
-                        {history.map((calculation, index) => (
-                            <p key={index} className={"text-white"}>
-                                {calculation.operation} = {calculation.operationResult}
-                            </p>
-                        ))}
-                    </div>
+
                 </div>
+
+            </div>
+
+            <button onClick={()=>{setIsHistoryMenuOpen(!isHistoryMenuOpen)}} className={"absolute top-0 left-0 my-28 mx-2 border rounded-xl px-1 py-3 text-white text-xl"}>Historique</button>
+            <div className={`absolute top-0 left-0 w-[40vh] h-full bg-gray-800 transition-all duration-150 origin-left ${isHistoryMenuOpen ? "-translate-x-full" : "translate-x-0"}`}>
+                <div className={"flex items-center flex-row justify-between text-white text-xl p-4 border-b border-gray-300"}>
+                    <h3 className={""}>Historique des calculs :</h3>
+                    <h3 className={"px-6 py-2 border rounded-xl"} onClick={()=>{setIsHistoryMenuOpen(!isHistoryMenuOpen)}}>X</h3>
+                </div>
+                {history.map((calculation, index) => (
+                    <p key={index} className={"text-white p-2"}>
+                        {calculation.operation} = {calculation.operationResult}
+                    </p>
+                ))}
             </div>
 
             <footer className={"bg-gray-800 text-center py-10 text-4xl text-white"}>

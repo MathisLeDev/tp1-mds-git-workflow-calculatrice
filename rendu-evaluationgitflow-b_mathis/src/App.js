@@ -6,10 +6,11 @@ function App() {
     const [leftOperand, setLeftOperand] = useState(1.0);
     const [rightOperand, setRightOperand] = useState(1.0);
     const [operator, setOperator] = useState("+");
-    const [lastResult, setLastResult] = useState(0.0);
+    const [lastResult, setLastResult] = useState(0);
     const [result, setResult] = useState(leftOperand + rightOperand);
 
-    useEffect(() => {
+
+    const handleCalculate = () => {
         setLastResult(result);
         switch (operator) {
             case "+":
@@ -28,7 +29,7 @@ function App() {
                 setResult(leftOperand + rightOperand);
                 break;
         }
-    }, [leftOperand, rightOperand, operator]);
+    }
 
     const handleLeftOperandChange = (event) => {
         const value = parseFloat(event.target.value);
@@ -45,13 +46,14 @@ function App() {
     };
 
     const handleClearEntry = () => {
-        setRightOperand(0);
+        setResult(0);
     };
 
     const handleClearAll = () => {
-        setLeftOperand(0);
         setRightOperand(0);
-        setOperator("+");
+        setLastResult(0);
+        setResult(0);
+        setLeftOperand(0);
     };
 
     return (
@@ -65,16 +67,21 @@ function App() {
             </div>
 
             <div className={"flex flex-col bg-gradient-to-r h-screen from-indigo-500 via-purple-500 to-pink-500"}>
-                <header className={"mx-auto mt-24 mb-32 text-4xl text-center text-white"}>
+                <header className={"mx-auto mt-24 mb-12 text-4xl text-center text-white"}>
                     <h2 className={"mb-3"}>Calculatrice en ligne</h2>
                     <p>Une application en ligne développée par Mathis le Dev</p>
                 </header>
+                <div className={"flex flex-row justify-center gap-8 my-4"}>
+                    <button onClick={handleClearEntry} className={"px-4 py-2 bg-red-500 text-white rounded-lg"}>C</button>
+                    <button onClick={handleClearAll} className={"px-4 py-2 bg-red-500 text-white rounded-lg"}>CA</button>
+                </div>
                 <div className={"mx-auto w-[40vw] flex flex-col gap-32"}>
                     <div className={"px-8 flex flex-row justify-between  text-5xl py-4 rounded-full bg-gray-800 "}>
                         <span className={"text-gray-500 text-2xl mt-2"}>{lastResult}</span>
-                        <span className={"text-white text-4xl"}>{lastResult}{result}</span>
+                        <span className={"text-white text-4xl"}>{result}</span>
                     </div>
                     <div className={"rounded-full bg-white text-black flex flex-row text-4xl"}>
+
                         <input
                             type="number"
                             value={leftOperand}
@@ -99,12 +106,9 @@ function App() {
                         />
 
                     </div>
+                    <button onClick={handleCalculate} className={"rounded-xl px-6 py-3 bg-pink-500 mx-auto hover:bg-yellow-500 transition-all ease-in duration-200 text-white text-2xl hover:scale-110"}>Calculer</button>
 
-                    <div className={"flex flex-row justify-center gap-8"}>
-                        <button onClick={handleClearEntry} className={"px-4 py-2 bg-red-500 text-white rounded-lg"}>CE</button>
-                        <button onClick={handleClearAll} className={"px-4 py-2 bg-red-500 text-white rounded-lg"}>CA</button>
 
-                    </div>
                 </div>
 
             </div>
